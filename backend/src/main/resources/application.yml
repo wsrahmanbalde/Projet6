@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: MDD_Backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/mdd_db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+
+jwt:
+  secret: 6A465267597A423F4528482B4D6251655468576D5A7134743777217A25432A46
