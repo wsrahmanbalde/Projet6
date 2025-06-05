@@ -1,4 +1,4 @@
-# Projet MDD - Application Fullstack Java 21 + Angular
+# Projet MDD - Application Fullstack Java 21 + Angular 19
 
 ## Description
 
