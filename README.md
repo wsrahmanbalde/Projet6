@@ -19,8 +19,15 @@ Ce projet est une application fullstack composée d'un backend Java 21 avec Spri
 ## Configuration de la base de données
 
 - Nom de la base : `mdd_db`
-- Utilisateur : `root`
-- Mot de passe : `root`
+- Utilisateur : `*****`
+- Mot de passe : `*****`
+> **Important :** pour des raisons de sécurité et de flexibilité, les informations de connexion sont **à placer dans un fichier `.env`** à la racine du projet backend.
+
+### Exemple de fichier `.env` à créer :
+```env
+DB_NAME=mdd_db
+DB_USERNAME=username
+DB_PASSWORD=password
 
 Crée la base de données MySQL :
 
