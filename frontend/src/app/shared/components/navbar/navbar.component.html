@@ -1,0 +1,40 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <a routerLink="/" class="logo">
+      <img src="/logo_p6.png" alt="Welcome" class="welcome-image logo" />
+    </a>
+  </div>
+
+  <div class="navbar-right">
+    @if (isLoggedIn()) {
+      <a (click)="logout()" class="red">Se déconnecter</a>
+      <a routerLink="/articles" routerLinkActive="active">Articles</a>
+      <a routerLink="/themes" routerLinkActive="active">Thèmes</a>
+      <a routerLink="/profiles" routerLinkActive="active">
+        <span class="user-icon"><i class="fas fa-user-circle custom-icon"></i></span>
+      </a>
+    }
+  </div>
+
+  <!-- Bouton toggle visible uniquement si menu fermé -->
+  @if (!menuOpen) {
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  }
+
+  <!-- Menu mobile slide -->
+  <div class="mobile-menu" [class.open]="menuOpen">
+    <a (click)="logout(); closeMenu()" class="red">Se déconnecter</a>
+    <a routerLink="/articles" (click)="closeMenu()"> Articles</a>
+    <a routerLink="/themes" (click)="closeMenu()">Thèmes</a>
+    <a routerLink="/profiles" class="profile-link" (click)="closeMenu()">
+      <span class="user-icon"><i class="fas fa-user-circle custom-icon"></i></span>
+    </a>
+  </div>
+
+  <!-- Overlay pour fermer le menu au clic en dehors -->
+  @if (menuOpen) {
+    <div class="overlay" (click)="closeMenu()"></div>
+  }
+</nav>

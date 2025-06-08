@@ -1,0 +1,18 @@
+<div class="container">
+  @for (subject of subjects; track $index) {
+    <div class="card">
+      <div class="card-title">{{ subject.name }}</div>
+      <div class="card-content">
+        {{ subject.description }}
+      </div>
+      <div class="card-button-wrapper">
+        
+        <button
+          (click)="toggleSubscription(subject)"
+          [ngClass]="subject.subscribed ? 'card-button btn-gray' : 'card-button btn-primary'">
+          {{ subject.subscribed ? 'Déjà abonné' : 'S’abonner' }}
+        </button>
+      </div>
+    </div>
+  }
+</div>

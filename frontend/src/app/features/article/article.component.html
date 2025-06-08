@@ -1,0 +1,18 @@
+<div class="article-header">
+    <button routerLink="create" class="create-button">Créer un article</button>
+    <div class="sort-text" (click)="toggleSort()">Trier par <span class="arrow">↓</span></div>
+</div>
+<div class="container">
+    @for (post of posts; track $index) {
+      <div class="card" (click)="goToPostDetail(post.id)">
+        <div class="card-title">{{ post.title}}</div>
+        <div class="card-meta">
+          <span class="card-date">{{ post.createdAt | date: 'dd/MM/yyyy' }}</span>
+          <span class="card-author">{{post.authorUsername}}</span> 
+        </div>
+        <div class="card-content">
+          {{ post.content}}
+        </div>
+      </div>      
+    }
+</div>

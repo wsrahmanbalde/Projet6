@@ -1,0 +1,138 @@
+
+.register-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* Empêche le scroll dans le container */
+}
+
+/* Bouton de retour */
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Titre */
+.title {
+  margin-bottom: 1.5rem;  /* Réduit la marge sous le titre */
+  font-size: 1.6rem; /* Ajuste la taille du titre pour éviter qu'il prenne trop de place */
+  font-weight: lighter;
+}
+
+/* Formulaire */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 280px;  /* Réduit la largeur pour éviter le scroll horizontal */
+  margin: 0 auto;  /* Centre le formulaire horizontalement */
+}
+
+/* Groupes de champ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: normal; /* Texte normal */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;  /* Réduit la hauteur des champs pour éviter le scroll */
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Bouton adaptatif */
+.submit-btn {
+  align-self: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 15px;
+  cursor: pointer;
+  border: 1px solid black;
+  background: transparent;
+  background-color: #7453FA;
+  color: white;
+  border-radius: 8px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    padding: 0;
+  }
+
+.mobile-logo {
+  display: none;
+}
+
+.password-checklist {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.password-checklist li {
+  color: red;
+}
+
+.password-checklist li.valid {
+  color: green;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive - Ajuste les marges et la largeur du formulaire sur mobile */
+@media (max-width: 768px) {
+  .register-form {
+    max-width: 280px; /* même que desktop */
+    width: 100%;
+    margin: 0 auto;   /* centre horizontalement */
+    padding: 0 1rem;  /* légère marge interne à gauche/droite */
+  }
+  .mobile-logo {
+    display: block;
+    width: 180px;
+    margin: 0 auto 1rem auto;
+  }
+
+  .title {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+  }
+
+  .submit-btn {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      background-color: #7453FA;
+      color: white;
+  }
+
+  /* Champs d'input sur mobile */
+  .form-group input {
+      height: 40px;  /* Réduit la hauteur des champs pour le mobile */
+  }
+}

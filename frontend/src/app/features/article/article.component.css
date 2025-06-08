@@ -1,0 +1,115 @@
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  
+  .create-button {
+    padding: 8px 16px;
+    background-color: #7453FA;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .sort-text {
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .arrow {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 40px;
+  }
+
+  .card {
+    background-color: #D3D3D3;
+    padding: 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.03); /* 👈 Agrandissement de 3% */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* 👈 Ombre un peu plus marquée */
+  }
+
+  .card-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 12px;
+    height: 1.2em;
+  }
+
+  .card-date {
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  .card-author {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  .card-content {
+    font-size: 1em;
+    color: #333;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 5;      /* limite à 5 lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;    /* affiche "..." si dépassement */
+    white-space: normal;  
+  }
+
+  @media (max-width: 768px) {
+
+    .container {
+      grid-template-columns: 1fr; /* une seule carte sur mobile */
+    }
+
+    .card-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      position: static;
+    }
+
+    .card-author {
+      position: static;
+      transform: none;
+      margin-top: 4px;
+    }
+  }

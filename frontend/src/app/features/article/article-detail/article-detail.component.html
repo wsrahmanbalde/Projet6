@@ -1,0 +1,51 @@
+<div class="article-wrapper">
+  <span class="back-arrow" (click)="goBack()"><i class="fas fa-arrow-left"></i></span>
+  @if (post) {
+
+    <div class="article-detail-container">
+      <div class="header">
+        <h2 class="article-title"> {{ post.title }} </h2>
+      </div>
+
+      <!-- Infos : date, auteur, thème -->
+      <div class="meta">
+        <span class="meta-item">{{ post.createdAt | date: 'dd/MM/yyyy' }}</span>
+        <span class="meta-item">{{ post.authorUsername }}</span>
+        <span class="meta-item">{{ post.subjectName }}</span>
+      </div>
+
+      <!-- Contenu de l'article -->
+      <div class="content">
+        {{ post.content }}
+      </div>
+
+      <!-- Séparateur -->
+      <hr class="separator" />
+
+      <!-- Libellé "Commentaires" -->
+      <div class="comments-label">Commentaires</div>
+
+    <!-- Liste des commentaires -->
+      <div class="comments-list">
+        <div *ngFor="let comment of comments; let i = index" class="comment-item">
+          <strong class="comment-author">{{ comment.authorUsername }}</strong>
+          <span class="comment-bubble">{{ comment.content }}</span>
+        </div>
+      </div>
+
+      <!-- Zone d'ajout de commentaire -->
+      <div class="comment-input-section">
+        <textarea 
+          [(ngModel)]="newComment" 
+          class="comment-textarea" 
+          placeholder="Écrivez ici votre commentaire">
+        </textarea>
+        <button class="comment-submit-button" (click)="submitComment()">
+          <i class="fas fa-paper-plane" style="color: #7e57c2; font-size: 24px;"></i>
+        </button>
+      </div>
+    </div>
+  } @else {
+    <p>Chargement de l'article...</p>
+  }
+</div>
