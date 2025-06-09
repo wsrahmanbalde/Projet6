@@ -18,10 +18,8 @@ import java.util.stream.Collectors;
 @Service
 public class JwtService {
 
-    /*@Value("${API_KEY}")
-    private String SECRET_KEY;*/
-
-    private static final String SECRET_KEY = "6A465267597A423F4528482B4D6251655468576D5A7134743777217A25432A46"; // clé de 256 bits
+    @Value("${API_KEY}")
+    private String SECRET_KEY;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);

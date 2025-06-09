@@ -35,11 +35,11 @@ export class LayoutComponent {
       });
   }
 
-  toggleMenu() {
+  toggleMenu(): void  {
     this.menuOpen = !this.menuOpen;
   }
 
-  logout() {
+  logout(): void  {
     // Logique de déconnexion ici (ex: AuthService.logout())
     this.isLoggedIn = false;
     this.router.navigate(['/']);

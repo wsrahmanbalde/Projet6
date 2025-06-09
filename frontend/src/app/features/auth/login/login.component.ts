@@ -24,6 +24,8 @@ export class LoginComponent implements OnDestroy {
   });
 
   errorMessage: string = '';
+
+  // Stocke les subscriptions pour un nettoyage dans ngOnDestroy
   private subscriptions: Subscription[] = [];
 
   onSubmit(): void {
@@ -46,14 +48,17 @@ export class LoginComponent implements OnDestroy {
         }
       });
 
+      // On ajoute la subscription au tableau
       this.subscriptions.push(sub);
+
     } else {
       console.log('Form is invalid');
       this.errorMessage = 'Tous les champs sont requis.';
     }
   }
-
+ // Désabonnement pour éviter les fuites mémoire
   ngOnDestroy(): void {
     this.subscriptions.forEach(sub => sub.unsubscribe());
   }
+
 }

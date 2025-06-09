@@ -89,8 +89,7 @@ export class RegisterComponent implements OnDestroy {
         this.router.navigate(['/articles']);
       },
       error: (err) => {
-        console.error('Erreur inscription:', err);
-        if (err.status === 409) {  // 409 Conflict est le code standard pour ce genre d'erreur
+        if (err.status === 409) { 
             this.errorMessage = err.error || 'Email ou nom d\'utilisateur déjà utilisé';
           } else {
             this.errorMessage = 'Une erreur est survenue lors de l\'inscription.';
